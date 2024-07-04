@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  vendor-portal:
+    image: pratikbhusari220/selenium
+    environment:
+    - BROWSER=chrome
+    - HUB_HOST=hub
+    - THREAD_COUNT=3
+    - TEST_SUITE=vendor-portal.xml
+    volumes:
+    - C:\Users\prati\WorkSpace\DockerUdemy\03-automation-framework\selenium-docker\output\vendor-portal:/home/selenium-docker/test-output
+  flight-reservation:
+    image: pratikbhusari220/selenium
+    environment:
+    - BROWSER=firefox
+    - HUB_HOST=hub
+    - THREAD_COUNT=4
+    - TEST_SUITE=flight-reservation.xml
+    volumes:
+    - C:\Users\prati\WorkSpace\DockerUdemy\03-automation-framework\selenium-docker\output\flight-reservation:/home/selenium-docker/test-output
